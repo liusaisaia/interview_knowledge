@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // new一个函数
+  // ES5写法
+  function newObject(target) {
+    var obj = {},
+        params = [].splice.call(arguments,1),
+        result;
+    obj.__proto__ = target.prototype;
+    result = target.apply(obj, params);
+    
+    if (result != null && /(function | object)/.test(typeof result)) {
+      return  result;
+    }
+
+    return obj;
+  }
+</script>
+</html>
