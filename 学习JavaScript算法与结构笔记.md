@@ -101,3 +101,65 @@ PI = 2222; // 报错
 
 ```
 
+### 声明展开和剩余参数
+
+在ES5中我们可以用apply()函数吧数组转化为参数，ES2015有了展开运算符
+
+```javascript
+let params = [1, 2, 3];
+console.log(sum(...params));
+// 等同于
+console.log(sum.apply(undefiend, params));
+```
+
+在函数中展开运算符也可以替代arguments，当做剩余的参数。
+
+### 增强的对象属性
+
+ES2015引入了数组解构的概念，可以一次初始化多个例子；
+
+```
+let [x, y] = ['a', 'b'];
+// 等同于
+let x = 'a';
+let y = 'b';
+```
+
+数组解构可以用来进行值得交换
+
+```javascript
+[1,2] = [2,1]
+```
+
+还有一个属性的简写
+
+```
+let [x, y] = ['a', 'b'];
+let obj = {x, y};
+console.log(obj); // {x: 'a' , y: 'b'}
+
+//等同于
+let x = 'a';
+let y = 'b';
+let obj2 = {X:X, Y:Y};
+
+```
+
+简写方法名
+
+```
+const hello = {
+	name: 'as',
+	printHello() {
+		console.log('Hello')
+	}
+}
+// 等同于
+var hello = {
+	name: 'as',
+	printHello: function printHello () {
+		console.log('hello')
+	}
+}
+```
+
